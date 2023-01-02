@@ -1,32 +1,38 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import ProTip from './ProTip';
+import { ThemeProvider } from "@emotion/react";
+import { createTheme, CssBaseline, Container, Switch } from "@mui/material";
+import React from "react";
+import { useState } from "react";
 
-function Copyright() {
+function App() {
+  const [mode, setMode] = useState("light");
+  const darkTheme = createTheme({
+    palette: {
+      mode: "dark",
+      background: {
+        default: "hsl(230, 17%, 14%)"
+      }
+    }
+  });
+
+  const lightTheme = createTheme({
+    palette: {
+      mode: "light",
+      background: {
+        default: "hsl(0, 0%, 100%)"
+      }
+    }
+  });
+
+  const selectedTheme = mode === "dark" ? darkTheme : lightTheme;
+
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}.
-    </Typography>
+    <ThemeProvider theme={selectedTheme}>
+      <CssBaseline />
+      <Container maxWidth="lg">
+        <Switch onChange={() => setMode(mode === "light" ? "dark" : "light")} />
+      </Container>
+    </ThemeProvider>
   );
 }
 
-export default function App() {
-  return (
-    <Container maxWidth="sm">
-      <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          Create React App example with TypeScript
-        </Typography>
-        <ProTip />
-        <Copyright />
-      </Box>
-    </Container>
-  );
-}
+export default App;
