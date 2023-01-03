@@ -2,6 +2,7 @@ import { ThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Container, Switch } from "@mui/material";
 import React from "react";
 import { useState } from "react";
+import { SwitchComponent } from "./component/SwitchComponent";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -29,7 +30,7 @@ function App() {
     <ThemeProvider theme={selectedTheme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Switch onChange={() => setMode(mode === "light" ? "dark" : "light")} />
+        <SwitchComponent onChange={() => setMode(mode === "light" ? "dark" : "light")} checked={mode === "light"}/>
       </Container>
     </ThemeProvider>
   );
