@@ -1,8 +1,9 @@
 import { ThemeProvider } from "@emotion/react";
-import { createTheme, CssBaseline, Container, Switch } from "@mui/material";
+import { createTheme, CssBaseline, Container, Switch, StyledEngineProvider } from "@mui/material";
 import React from "react";
 import { useState } from "react";
-import { SwitchComponent } from "./component/SwitchComponent";
+import { SwitchComponent } from "./component/SwitchComponent/SwitchComponent";
+import AccountMenuComponent from "./component/AccountMenuComponent/AccountMenuComponent";
 
 function App() {
   const [mode, setMode] = useState("light");
@@ -29,9 +30,12 @@ function App() {
   return (
     <ThemeProvider theme={selectedTheme}>
       <CssBaseline />
-      <Container maxWidth="lg">
+      <React.StrictMode>
+      <StyledEngineProvider injectFirst>
+        <AccountMenuComponent />
         <SwitchComponent onChange={() => setMode(mode === "light" ? "dark" : "light")} checked={mode === "light"}/>
-      </Container>
+      </StyledEngineProvider>
+      </React.StrictMode>
     </ThemeProvider>
   );
 }
