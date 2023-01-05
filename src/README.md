@@ -1,0 +1,2 @@
+# Projeyle Alakalı Önemli Noktalar
+
