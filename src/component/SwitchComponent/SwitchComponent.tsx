@@ -18,6 +18,7 @@ export const SwitchComponent: React.FC<SwitchComponentProps> = ({
     <Switch
       checked={checked}
       onChange={handleChange}
+      color={"default"}
       inputProps={{ 'aria-label': 'controlled' }}
     />
   );
