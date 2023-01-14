@@ -98,6 +98,8 @@ export const Dashboard : React.FC<DashBoardComponentProps> = ({
     setOpen(!open);
   }; 
 
+
+  
   return (
 
       <Box sx={{ display: 'flex' }}>
@@ -215,12 +217,5 @@ export const Dashboard : React.FC<DashBoardComponentProps> = ({
       </Box>
 
   );
-}
-
-function makeStyles(arg0: (theme: any) => { root: { boxShadow: string; backgroundColor: string; }; }) {
-    throw new Error('Function not implemented.');
-}
-function useStyles() {
-    throw new Error('Function not implemented.');
 }
 
