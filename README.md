@@ -13,6 +13,6 @@ npm start
 ```
 
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/buraksecer/reactjs-101/draft/epic-mclean)
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)]([https://codesandbox.io/p/github/buraksecer/reactjs-101/draft/epic-mclean](https://codesandbox.io/p/github/buraksecer/reactjs-101/draft/heuristic-bash))
 
 # Coming Soon :)
