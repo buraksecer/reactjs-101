@@ -1,7 +1,5 @@
-// pages
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Products from "./pages/Products";
+import SignInSide from "./SignIn";
+import SingUp from "./SignUp"
 
 // other
 import {FC} from "react";
@@ -17,24 +15,17 @@ interface Route {
 
 export const routes: Array<Route> = [
     {
-        key: 'home-route',
-        title: 'Home',
+        key: 'login-route',
+        title: 'Login',
         path: '/',
         enabled: true,
-        component: Home
+        component: SignInSide
     },
     {
-        key: 'about-route',
-        title: 'About',
-        path: '/about',
+        key: 'register-route',
+        title: 'Register',
+        path: '/register',
         enabled: true,
-        component: About
-    },
-    {
-        key: 'products-route',
-        title: 'Products',
-        path: '/products',
-        enabled: true,
-        component: Products
+        component: SingUp
     }
 ]
