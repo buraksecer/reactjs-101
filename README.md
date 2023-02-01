@@ -12,7 +12,6 @@ npm install
 npm start
 ```
 
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)]([https://codesandbox.io/p/github/buraksecer/reactjs-101/draft/epic-mclean](https://codesandbox.io/p/github/buraksecer/reactjs-101/draft/heuristic-bash))
+[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/buraksecer/reactjs-101/draft/quizzical-fog)
 
 # Coming Soon :)
