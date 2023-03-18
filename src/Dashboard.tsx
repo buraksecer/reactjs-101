@@ -20,6 +20,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import AccountMenuComponent from './component/AccountMenuComponent/AccountMenuComponent';
 import { SwitchComponent } from './component/SwitchComponent/SwitchComponent';
+import {useState} from "react";
 
 function Copyright(props: any) {
   return (
@@ -85,21 +86,14 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export interface DashBoardComponentProps {
-    onChange(value: boolean): void;
-    checked: boolean
 }
 
-export const Dashboard : React.FC<DashBoardComponentProps> = ({
-    onChange,
-    checked
-}) => {
+export const Dashboard : React.FC<DashBoardComponentProps> = () => {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
-  }; 
+  };
 
-
-  
   return (
 
       <Box sx={{ display: 'flex' }}>
@@ -133,15 +127,7 @@ export const Dashboard : React.FC<DashBoardComponentProps> = ({
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-                
-              </Badge>
               <AccountMenuComponent />
-                <SwitchComponent
-                onChange={onChange}
-                checked={checked}
-                />
             </IconButton>
           </Toolbar>
         </AppBar>

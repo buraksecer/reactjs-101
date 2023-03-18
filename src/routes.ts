@@ -3,6 +3,8 @@ import SingUp from "./SignUp"
 
 // other
 import {FC} from "react";
+import {Dashboard} from "./Dashboard";
+import {Profile} from "./Profile";
 
 // interface
 interface Route {
@@ -27,5 +29,19 @@ export const routes: Array<Route> = [
         path: '/register',
         enabled: true,
         component: SingUp
+    },
+    {
+        key: 'home',
+        title: 'Home',
+        path: '/home',
+        enabled: true,
+        component: Dashboard
+    },
+    {
+        key: 'profile',
+        title: 'Profile',
+        path: '/profile',
+        enabled: true,
+        component: Profile
     }
 ]

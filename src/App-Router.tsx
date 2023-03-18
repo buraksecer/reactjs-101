@@ -21,6 +21,7 @@ function App() {
         dark: "#00867d",
         contrastText: "#000",
       },
+      mode: "light"
     },
   });
 
@@ -28,7 +29,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Layout>
+
           <Routes>
             {appRoutes.map((route) => (
               <Route
@@ -38,7 +39,7 @@ function App() {
               />
             ))}
           </Routes>
-        </Layout>
+
       </Router>
     </ThemeProvider>
   );

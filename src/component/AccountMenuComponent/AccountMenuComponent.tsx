@@ -10,6 +10,9 @@ import Tooltip from '@mui/material/Tooltip';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
+import Link from "@mui/material/Link";
+import {InputLabel} from "@mui/material";
+import Button from "@mui/material/Button";
 
 export default function AccountMenuComponent() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -72,7 +75,10 @@ export default function AccountMenuComponent() {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem>
-          <Avatar /> Profile
+          <Avatar />
+          <Link href="profile" underline="none">
+            {'Profile'}
+          </Link>
         </MenuItem>
         <MenuItem>
           <Avatar /> My account
@@ -94,7 +100,9 @@ export default function AccountMenuComponent() {
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          <Link href="/" underline="none">
+            {'Logout'}
+          </Link>
         </MenuItem>
       </Menu>
     </React.Fragment>

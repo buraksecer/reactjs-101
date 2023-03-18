@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {useNavigate} from "react-router-dom";
 
 function Copyright(props: any) {
   return (
@@ -29,13 +30,19 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export default function SignInSide() {
+    const navigate = useNavigate();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    const userData = {
+        email: data.get('email'),
+        password: data.get('password'),
+    };
+
+    if(userData.email == "1" && userData.password == "1"){
+        navigate("/home");
+    }
   };
 
   return (

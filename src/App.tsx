@@ -37,7 +37,8 @@ function App() {
       <StyledEngineProvider injectFirst>
         {
           isLogin ? (
-            <Dashboard onChange={() => setMode(mode === "light" ? "dark" : "light")} checked={mode === "light"} />
+            /*<Dashboard onChange={() => setMode(mode === "light" ? "dark" : "light")} checked={mode === "light"} />*/
+            <Dashboard/>
           ):(
             <SignInSide/>
           )
