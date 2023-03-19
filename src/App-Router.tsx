@@ -6,6 +6,8 @@ import { routes as appRoutes } from "./routes";
 import Layout from "./component/Layout";
 
 function App() {
+    const [open, setOpen] = React.useState(true);
+    const drawerWidth: number = 240;
   // define theme
   const theme = createTheme({
     palette: {
@@ -29,7 +31,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-
           <Routes>
             {appRoutes.map((route) => (
               <Route
@@ -39,7 +40,6 @@ function App() {
               />
             ))}
           </Routes>
-
       </Router>
     </ThemeProvider>
   );

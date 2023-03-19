@@ -23,6 +23,9 @@ export default function AccountMenuComponent() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const handleChangeDash = (url:string) =>{
+    window.location.replace(url)
+  }
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -74,11 +77,9 @@ export default function AccountMenuComponent() {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem>
+        <MenuItem onClick={ () => handleChangeDash("profile") }>
           <Avatar />
-          <Link href="profile" underline="none">
-            {'Profile'}
-          </Link>
+          Profile
         </MenuItem>
         <MenuItem>
           <Avatar /> My account
@@ -96,13 +97,11 @@ export default function AccountMenuComponent() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={ () => handleChangeDash("/") }>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          <Link href="/" underline="none">
-            {'Logout'}
-          </Link>
+            Logout
         </MenuItem>
       </Menu>
     </React.Fragment>
