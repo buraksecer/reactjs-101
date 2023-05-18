@@ -13,6 +13,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useNavigate} from "react-router-dom";
+import {Dispatch} from "react";
+import {useDispatch} from "react-redux";
+import {addUser} from "./redux/actionCreators";
+
+
 
 function Copyright(props: any) {
   return (
@@ -29,7 +34,12 @@ function Copyright(props: any) {
 
 const theme = createTheme();
 
-export default function SignInSide() {
+const SignInSide: React.FC = () =>  {
+    const dispatch: Dispatch<any> = useDispatch();
+    const save = (user: IUser) => {
+        dispatch(addUser(user))
+    }
+
     const navigate = useNavigate();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -41,6 +51,9 @@ export default function SignInSide() {
     };
 
     if(userData.email == "1" && userData.password == "1"){
+        save( {
+            mail:userData.email,
+        })
         navigate("/home");
     }
   };
@@ -132,3 +145,5 @@ export default function SignInSide() {
     </ThemeProvider>
   );
 }
+
+export default SignInSide
