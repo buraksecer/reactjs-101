@@ -3,7 +3,6 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { routes as appRoutes } from "./routes";
-import Layout from "./component/Layout";
 
 function App() {
     const [open, setOpen] = React.useState(true);

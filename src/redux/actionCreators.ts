@@ -6,7 +6,9 @@ export function addUser(user: IUser) {
         user,
     }
 
-    return simulateHttpRequest(action)
+    return (dispatch: DispatchType) => {
+        dispatch(action)
+    }
 }
 
 export function removeUser(user: IUser) {
@@ -14,13 +16,7 @@ export function removeUser(user: IUser) {
         type: actionTypes.REMOVE_USER,
         user,
     }
-    return simulateHttpRequest(action)
-}
-
-export function simulateHttpRequest(action: UserAction) {
     return (dispatch: DispatchType) => {
-        setTimeout(() => {
-            dispatch(action)
-        }, 500)
+        dispatch(action)
     }
 }

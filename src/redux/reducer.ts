@@ -5,28 +5,24 @@ const initialState: UserState = {
         mail:"burak"
     },
 }
-
 const reducer = (
     state: UserState = initialState,
     action: UserAction
 ): UserState => {
-
     switch (action.type) {
         case actionTypes.ADD_USER:
-            const newUser: IUser = {
-                mail: action.user.mail,
-            }
             return {
-                ...state,
-                user: newUser,
+                user: action.user,
             }
         case actionTypes.REMOVE_USER:
             return {
-                ...state,
                 user: initialState.user,
             }
     }
     return state
 }
+
+export const getUserState = (state: UserState) =>
+    state.user;
 
 export default reducer
