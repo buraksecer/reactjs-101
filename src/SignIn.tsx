@@ -15,10 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useNavigate} from "react-router-dom";
 import {Dispatch} from "react";
 import {useDispatch} from "react-redux";
-import {addUser} from "./redux/actionCreators";
-
-
-
+import {setUser} from "./redux-store/reducer/userSlice";
 function Copyright(props: any) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -35,12 +32,8 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 const SignInSide: React.FC = () =>  {
-    const dispatch: Dispatch<any> = useDispatch();
-    const save = (user: IUser) => {
-        dispatch(addUser(user))
-    }
-
-    const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -51,9 +44,7 @@ const SignInSide: React.FC = () =>  {
     };
 
     if(userData.email == "1" && userData.password == "1"){
-        save( {
-            mail:userData.email,
-        })
+        dispatch(setUser(userData.email));
         navigate("/home");
     }
   };

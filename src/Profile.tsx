@@ -1,16 +1,14 @@
-import { Box } from "@mui/material"
 import * as React from "react";
-import {shallowEqual, useSelector} from "react-redux";
-import {getUserState} from "./redux/reducer";
+import { useSelector} from "react-redux";
 
+export function Profile() {
 
-
-export const Profile = () => {
-    const user = useSelector(getUserState)
-
+    const user = useSelector((state: any) => state.user);
+    console.log("user",user)
     return (
-       <>
-           {user.mail}
-       </>
+        <div>
+            <h1>Profile Page</h1>
+        </div>
     )
 }
+
