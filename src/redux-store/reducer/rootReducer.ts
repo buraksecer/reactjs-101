@@ -1,9 +1,9 @@
 import allProductSlice from "./allProductSlice";
+import userSlide from "./userSlice";
 
-const rootReducer = () => {
+export default function rootReducer () {
     return {
         allProduct: allProductSlice,
+        user: userSlide
     }
 }
-
-export default rootReducer;
