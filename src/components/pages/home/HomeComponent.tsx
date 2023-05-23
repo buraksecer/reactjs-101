@@ -8,13 +8,16 @@ export function HomeComponent() {
     const allProductState = useSelector((state: any) => state.allProduct);
     const userState = useSelector((state: any) => state.user);
     const dispatch = useDispatch();
-    const user = {
-        email:'selam@hotmail.com'
+    const userInfo = {
+       user:{
+           email:'selam@hotmail.com',
+           fullName: 'burak seçer'
+       }
     }
 
     useEffect(() => {
         dispatch(getAllProductRequestAction());
-        dispatch(setUserAction(user));
+        dispatch(setUserAction(userInfo));
     }, []);
 
     return (<>
@@ -25,7 +28,8 @@ export function HomeComponent() {
                     <img className="h-65 w-60" alt="" src={item.image}/>
                     <span>{`PRICE: ${item.price}`}</span>
                     <span>{item.title}</span>
-                    <span>{userState.email}</span>
+                    <span>{userState.user.email}</span>
+                    <span>{userState.user.fullName}</span>
                 </div>
             })}
         </div>

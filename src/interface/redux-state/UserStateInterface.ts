@@ -1,3 +1,8 @@
 export interface UserInfoInterface {
-    email: string
+    user: UserInterface
+}
+
+export interface UserInterface{
+    email:string
+    fullName: string | null
 }

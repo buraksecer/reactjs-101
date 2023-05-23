@@ -3,7 +3,10 @@ import {createSlice, PayloadAction} from "@reduxjs/toolkit";
 
 
 const initialState: UserInfoInterface = {
-    email:'burak.secer@gmail.com'
+   user:{
+       email:'burak.secer@gmail.com',
+       fullName: null
+   }
 }
 
 
@@ -12,7 +15,7 @@ export const userSlide= createSlice({
     initialState,
     reducers:{
         setUserAction:(state: UserInfoInterface,action: PayloadAction<UserInfoInterface>)=> {
-            state.email = action.payload.email
+            state.user = action.payload.user
         }
     }
 })
